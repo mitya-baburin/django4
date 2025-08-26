@@ -10,15 +10,15 @@ class Employee(AbstractUser):
     skills = models.JSONField() 
     hire_date = models.DateField()
 
-    # Переопределяем поля для групп и разрешений
+   
     groups = models.ManyToManyField(
         Group,
-        related_name="employees",  # Переопределите имя обратной связи
+        related_name="employees", 
         blank=True
     )
     user_permissions = models.ManyToManyField(
         Permission,
-        related_name="employees",  # Переопределите имя обратной связи
+        related_name="employees",  
         blank=True
     )
 
